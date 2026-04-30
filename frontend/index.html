@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AI Inquiry Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>AI Inquiry Assistant</h1>
+  <div class="container">
+
+    <div class="contact-grid">
+      <div class="form-card">
+        <h2>Contact Form</h2>
+
+        <form class="form-grid">
+          <div class="field-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+
+          <div class="field-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" />
+          </div>
+
+          <div class="field-group">
+            <label for="website">Website (optional)</label>
+            <input type="text" id="website" name="website" placeholder="www.website.com" />
+          </div>
+
+          <div class="field-group">
+            <label for="company">Company (optional)</label>
+            <input type="text" id="company" name="company" placeholder="Company Name" />
+          </div>
+
+          <div class="field-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>select</option>
+              <option>General Inquiry</option>
+              <option>Follow-up</option>
+              <option>Technical Issue</option>
+              <option>Partnership / Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What is your request about?"></textarea>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="analyzeBtn">Send Message</button>
+        </form>
+      </div>
+
+      <aside class="info-card">
+        <h3>Other Contacting Ways</h3>
+        <p>
+          Prefer to contact us directly?
+        </p>
+
+        <div class="info-stack">
+          <div class="info-box">
+            <strong>E-Mail</strong>
+            <a href="mailto:kontakt@hevalautomation.com">kontakt@hevalautomation.com</a>
+          </div>
+
+          <div class="info-box">
+            <strong>Phone</strong>
+            <a href="tel:+4917664835592">+49 176 64835592</a>
+          </div>
+
+          <div class="info-box">
+            <strong>Social Media</strong>
+
+            <div class="social-row">
+              <a href="https://www.tiktok.com/@hevalautomation" target="_blank" class="social-item">
+                <img src="./images/tik-tok.png" alt="TikTok">
+                <span>TikTok</span>
+              </a>
+
+              <a href="https://www.instagram.com/hevalautomation/" target="_blank" class="social-item">
+                <img src="./images/instagram.png" alt="Instagram">
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <strong>Note</strong>
+          <span>
+            We usually respond within 24 hours.
+          </span>
+        </div>
+      </aside>
+    </div>
+
+
+    
+
+    <pre id="result"></pre>
+  </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
