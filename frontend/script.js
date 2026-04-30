@@ -1,9 +1,6 @@
 const button = document.getElementById("analyzeBtn");
 const result = document.getElementById("result");
 
-console.log("script.js wurde geladen");
-console.log("Button:", button);
-
 button.addEventListener("click", async () => {
   const formData = {
     name: document.getElementById("name").value,

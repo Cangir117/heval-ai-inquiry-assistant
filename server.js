@@ -14,8 +14,6 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-console.log("API Key loaded:", !!process.env.OPENAI_API_KEY);
-
 // Basic security headers
 app.use(helmet());
 
@@ -56,13 +54,7 @@ app.post("/analyze", analyzeLimiter, async (req, res) => {
   const message = cleanText(req.body.message);
 
   // Pflichtfelder prüfen
-  if (
-    !name ||
-    !email ||
-    !subject ||
-    !message ||
-    subject === "Bitte auswählen"
-  ) {
+  if (!name || !email || !subject || !message) {
     return res.status(400).json({
       error: "Bitte füllen Sie alle Pflichtfelder aus.",
     });
@@ -70,10 +62,10 @@ app.post("/analyze", analyzeLimiter, async (req, res) => {
 
   //Name prüfen
   if (!/^[a-zA-ZäöüÄÖÜß\s\-]{2,}$/.test(name)) {
-  return res.status(400).json({
-    error: "Bitte geben Sie einen gültigen Namen ein.",
-  });
-}
+    return res.status(400).json({
+      error: "Bitte geben Sie einen gültigen Namen ein.",
+    });
+  }
 
   // E-Mail prüfen
   if (!validator.isEmail(email)) {
@@ -207,5 +199,5 @@ Nachricht: ${message}
 });
 
 app.listen(PORT, () => {
-  console.log(`Server läuft auf http://localhost:${PORT}`);
+  console.log(`Server is running: http://localhost:${PORT}`);
 });
